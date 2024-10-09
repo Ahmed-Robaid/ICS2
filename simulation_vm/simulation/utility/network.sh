@@ -3,6 +3,8 @@
 interface_file="/etc/network/interfaces"
 
 cat <<EOL > $interface_file
+source /etc/network/interfaces.d/*
+
 auto lo
 iface lo inet loopback
 
@@ -36,7 +38,9 @@ auto enp0s3:5
 iface enp0s3:5 inet static
 address 192.168.95.15
 netmask 255.255.255.0
-
 EOL
 
 systemctl restart networking.service
+
+echo "Dont Forget To Change NIC To Host_Only"
+sleep 3
