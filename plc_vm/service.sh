@@ -4,7 +4,7 @@ SERVICE_FILE="/etc/systemd/system/plc.service"
 iface_file="/etc/network/interfaces"
 
 cat <<EOL > $RUN_FILE
-cd ~/OpenPLC_v2
+cd /home/simulation/OpenPLC_v2
 sudo /usr/bin/nodejs server.js
 EOL
 
